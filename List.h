@@ -21,6 +21,7 @@ public:
     void push_back(T);
     int size() const;
     T& operator[](int id);
+    T& at(int id);
 
     List();
     ~List();
@@ -29,7 +30,7 @@ private:
     Node<T>* m_head;
     int m_size;
 
-    Node<T>* at(int id);
+    Node<T>* get(int id);
 };
 
 
@@ -60,8 +61,13 @@ int List<T>::size() const {
 }
 
 template<typename T>
+T& List<T>::at(int id) {
+  return get(id)->m_data;
+}
+
+template<typename T>
 T& List<T>::operator[](int id) {
-  return at(id)->m_data;
+  return get(id)->m_data;
 }
 
 template<typename T>
@@ -73,7 +79,7 @@ List<T>::~List() {
 }
 
 template<typename T>
-Node<T>* List<T>::at(int id) {
+Node<T>* List<T>::get(int id) {
   if (id < 0 || id >= m_size) {
     return nullptr;
   }
@@ -83,5 +89,7 @@ Node<T>* List<T>::at(int id) {
   }
   return current;
 }
+
+
 
 #endif // LIST_H
