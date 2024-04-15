@@ -16,20 +16,11 @@ std::shared_ptr<List<T>> makeList() {
 	return l;
 }
 
-int main()
+int main(int argc, char** argv)
 {
-	cout << std::boolalpha;
-	
-	auto l = makeList<int>();
-
-	cout << l->empty();
-
-	for(int i = 0; i < 1000; i++)
-		l->push_back(i);
-
-	printList(l);
+	testing::InitGoogleTest(&argc, argv);
 	
 
-	return 0;
+	return RUN_ALL_TESTS();
 }
 
