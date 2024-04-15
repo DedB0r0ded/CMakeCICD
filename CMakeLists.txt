@@ -8,16 +8,6 @@ endif()
 
 project (CMakeStud VERSION 0.1)
 
-# TODO: Добавить тесты
-enable_testing()
-include(FetchContent)
-FetchContent_Declare(
-  googletest
-  URL https://github.com/google/googletest/archive/03597a01ee50ed33e9dfd640b249b4be3799d395.zip
-)
-set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
-FetchContent_MakeAvailable(googletest)
-
 # Добавьте источник в исполняемый файл этого проекта.
 add_executable (CMakeStud "List.h" Source.cpp "Header.h" "Config.h" "Tests/ListTests.cpp")
 target_link_libraries(
@@ -30,3 +20,13 @@ gtest_discover_tests(CMakeStud)
 if (CMAKE_VERSION VERSION_GREATER 3.12)
   set_property(TARGET CMakeStud PROPERTY CXX_STANDARD 20)
 endif()
+
+# TODO: Добавить тесты
+enable_testing()
+include(FetchContent)
+FetchContent_Declare(
+  googletest
+  URL https://github.com/google/googletest/archive/03597a01ee50ed33e9dfd640b249b4be3799d395.zip
+)
+set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
+FetchContent_MakeAvailable(googletest)
