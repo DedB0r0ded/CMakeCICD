@@ -9,7 +9,7 @@ endif()
 project (CMakeStud)
 
 # Добавьте источник в исполняемый файл этого проекта.
-add_executable (CMakeStud Source.cpp "Header.h" "List.h" "List.cpp"  )
+add_executable (CMakeStud Source.cpp "Header.h" "List.h"   )
 
 if (CMAKE_VERSION VERSION_GREATER 3.12)
   set_property(TARGET CMakeStud PROPERTY CXX_STANDARD 20)
