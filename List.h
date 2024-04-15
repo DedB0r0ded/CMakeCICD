@@ -68,9 +68,11 @@ inline T* List<T>::pop_back()
   case 0:
     return ret;
   case 1:
+    ret = new T();
     *ret = m_head->m_data;
     break;
   default:
+    ret = new T();
     *ret = at(m_size - 1);
     break;
   }  
