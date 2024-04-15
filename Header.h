@@ -6,6 +6,7 @@
 #include <iostream>
 //#include <conio.h>
 #include <climits>
+#include <memory>
 
 #include "List.h"
 // TODO: установите здесь ссылки на дополнительные заголовки, требующиеся для программы.
