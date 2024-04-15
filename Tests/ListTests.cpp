@@ -70,10 +70,10 @@ TEST_F(ListTest, HandlesDoubles) {
 	ASSERT_EQ(dlist->at(0), DOUBLE_POSITIVE) << "Failed to locate positive double value";
 	ASSERT_EQ(dlist->at(1), DOUBLE_NEGATIVE) << "Failed to locate negative double value";
 	double* popped = dlist->pop_back();
-	ASSERT_EQ(*(dlist->pop_back()), DOUBLE_NEGATIVE) << "Failed to locate negative double value";
+	ASSERT_EQ(*popped, DOUBLE_NEGATIVE) << "Failed to pop negative double value";
 	delete popped;
 	popped = dlist->pop_back();
-	ASSERT_EQ(*(dlist->pop_back()), DOUBLE_POSITIVE) << "Failed to locate positive double value";
+	ASSERT_EQ(*popped, DOUBLE_POSITIVE) << "Failed to pop positive double value";
 	delete popped;
 	ASSERT_TRUE(dlist->empty());
 	ASSERT_EQ(dlist->size(), 0);
@@ -85,10 +85,10 @@ TEST_F(ListTest, HandlesStrings) {
 	ASSERT_EQ(slist->at(0), EMPTY_STRING) << "Failed to locate an empty string";
 	ASSERT_EQ(slist->at(1), STRING) << "Failed to locate a string";
 	std::string* popped = slist->pop_back();
-	ASSERT_EQ(*(slist->pop_back()), STRING) << "Failed to pop a string";
+	ASSERT_EQ(*popped, STRING) << "Failed to pop a string";
 	delete popped;
 	popped = slist->pop_back();
-	ASSERT_EQ(*(slist->pop_back()), EMPTY_STRING) << "Failed to pop an empty string";
+	ASSERT_EQ(*popped, EMPTY_STRING) << "Failed to pop an empty string";
 	delete popped;
 	ASSERT_TRUE(slist->empty());
 	ASSERT_EQ(slist->size(), 0);
