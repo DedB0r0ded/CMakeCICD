@@ -21,7 +21,7 @@ if (CMAKE_VERSION VERSION_GREATER 3.12)
   set_property(TARGET CMakeStud PROPERTY CXX_STANDARD 20)
 endif()
 
-# TODO: Добавить тесты
+# TODO: Добавить тесты 
 enable_testing()
 include(FetchContent)
 FetchContent_Declare(
