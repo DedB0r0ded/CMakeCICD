@@ -8,6 +8,5 @@
 #include <climits>
 #include <memory>
 
-#include "List.h"
 #include <gtest/gtest.h>
 // TODO: установите здесь ссылки на дополнительные заголовки, требующиеся для программы.

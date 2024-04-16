@@ -9,7 +9,7 @@ endif()
 project (CMakeStud VERSION 0.1)
 
 # Добавьте источник в исполняемый файл этого проекта.
-add_executable (CMakeStud "List.h" Source.cpp "Header.h" "Config.h" "Tests/ListTests.cpp")
+add_executable (CMakeStud "List.h" "Items/Item.h" "Header.h" "Config.h" "Tests/ListTests.cpp" "Tests/ItemsTests.cpp" Source.cpp)
 target_link_libraries(
   CMakeStud
   GTest::gtest_main
