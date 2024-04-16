@@ -13,11 +13,16 @@ protected:
   
   }
 
-  void SetUp() override{}
-  void TearDown() override{}
+  void SetUp() override{
+    item = new Item;
+  }
+  void TearDown() override{
+    delete item;
+  }
 };
 
-TEST_F(ItemTest, WasCreatedCorrectly) {
+
+TEST_F(ItemTest, DefaultConstructorAssertions) {
   Item& ref = *item;
   ASSERT_NE(item, nullptr);
   ASSERT_EQ(ref.id(), 0);
