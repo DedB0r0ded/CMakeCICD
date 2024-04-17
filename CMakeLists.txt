@@ -6,19 +6,19 @@ if (POLICY CMP0141)
   set(CMAKE_MSVC_DEBUG_INFORMATION_FORMAT "$<IF:$<AND:$<C_COMPILER_ID:MSVC>,$<CXX_COMPILER_ID:MSVC>>,$<$<CONFIG:Debug,RelWithDebInfo>:EditAndContinue>,$<$<CONFIG:Debug,RelWithDebInfo>:ProgramDatabase>>")
 endif()
 
-project (CMakeStud VERSION 0.1)
+project (CMakeCI VERSION 0.1)
 
 # Добавьте источник в исполняемый файл этого проекта.
-add_executable (CMakeStud "List.h" "Items/Item.h" "Header.h" "Config.h" "Tests/ListTests.cpp" "Tests/ItemsTests.cpp" Source.cpp)
+add_executable (CMakeCI "List.h" "Items/Item.h" "Header.h" "Config.h" "Tests/ListTests.cpp" "Tests/ItemsTests.cpp" Source.cpp)
 target_link_libraries(
-  CMakeStud
+  CMakeCI
   GTest::gtest_main
 )
 include(GoogleTest)
-gtest_discover_tests(CMakeStud)
+gtest_discover_tests(CMakeCI)
 
 if (CMAKE_VERSION VERSION_GREATER 3.12)
-  set_property(TARGET CMakeStud PROPERTY CXX_STANDARD 20)
+  set_property(TARGET CMakeCI PROPERTY CXX_STANDARD 20)
 endif()
 
 # TODO: Добавить тесты 
@@ -27,6 +27,7 @@ include(FetchContent)
 FetchContent_Declare(
   googletest
   URL https://github.com/google/googletest/archive/03597a01ee50ed33e9dfd640b249b4be3799d395.zip
+  DOWNLOAD_EXTRACT_TIMESTAMP NEW
 )
 set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
 FetchContent_MakeAvailable(googletest)

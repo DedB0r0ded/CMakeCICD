@@ -4,8 +4,8 @@
 template <typename T>
 class Node {
 public:
-    Node* m_next;
     T m_data;
+    Node* m_next;
 
     Node(T data = T(), Node* next = nullptr) : m_data(data), m_next(next) {}
 

@@ -23,10 +23,6 @@ protected:
 	}
 
 	~ListTest() override {
-		ilist->~List();
-		dlist->~List();
-		slist->~List();
-
 		delete ilist, dlist, slist;
 	}
 
