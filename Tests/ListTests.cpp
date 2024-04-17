@@ -48,44 +48,44 @@ TEST_F(ListTest, IsInitiallyEmpty) {
 TEST_F(ListTest, HandlesIntegers) {
 	ilist->push_back(INT_POSITIVE);
 	ilist->push_back(INT_NEGATIVE);
-	ASSERT_EQ(ilist->at(0), INT_POSITIVE) << "Failed to locate a positive integer value";
-	ASSERT_EQ(ilist->at(1), INT_NEGATIVE) << "Failed to locate a negative integer value";
+	EXPECT_EQ(ilist->at(0), INT_POSITIVE) << "Failed to locate a positive integer value";
+	EXPECT_EQ(ilist->at(1), INT_NEGATIVE) << "Failed to locate a negative integer value";
 	int* popped = ilist->pop_back();
-	ASSERT_EQ(*popped, INT_NEGATIVE) << "Failed to pop a negative integer value";
+	EXPECT_EQ(*popped, INT_NEGATIVE) << "Failed to pop a negative integer value";
 	delete popped;
 	popped = ilist->pop_back();
-	ASSERT_EQ(*popped, INT_POSITIVE) << "Failed to locate a positive integer value";
+	EXPECT_EQ(*popped, INT_POSITIVE) << "Failed to locate a positive integer value";
 	delete popped;
-	ASSERT_TRUE(ilist->empty());
+	EXPECT_TRUE(ilist->empty());
 	ASSERT_EQ(ilist->size(), 0);
 }
 
 TEST_F(ListTest, HandlesDoubles) {
 	dlist->push_back(DOUBLE_POSITIVE);
 	dlist->push_back(DOUBLE_NEGATIVE);
-	ASSERT_EQ(dlist->at(0), DOUBLE_POSITIVE) << "Failed to locate positive double value";
-	ASSERT_EQ(dlist->at(1), DOUBLE_NEGATIVE) << "Failed to locate negative double value";
+	EXPECT_EQ(dlist->at(0), DOUBLE_POSITIVE) << "Failed to locate positive double value";
+	EXPECT_EQ(dlist->at(1), DOUBLE_NEGATIVE) << "Failed to locate negative double value";
 	double* popped = dlist->pop_back();
-	ASSERT_EQ(*popped, DOUBLE_NEGATIVE) << "Failed to pop negative double value";
+	EXPECT_EQ(*popped, DOUBLE_NEGATIVE) << "Failed to pop negative double value";
 	delete popped;
 	popped = dlist->pop_back();
-	ASSERT_EQ(*popped, DOUBLE_POSITIVE) << "Failed to pop positive double value";
+	EXPECT_EQ(*popped, DOUBLE_POSITIVE) << "Failed to pop positive double value";
 	delete popped;
-	ASSERT_TRUE(dlist->empty());
+	EXPECT_TRUE(dlist->empty());
 	ASSERT_EQ(dlist->size(), 0);
 }
 
 TEST_F(ListTest, HandlesStrings) {
 	slist->push_back(EMPTY_STRING);
 	slist->push_back(STRING);
-	ASSERT_EQ(slist->at(0), EMPTY_STRING) << "Failed to locate an empty string";
-	ASSERT_EQ(slist->at(1), STRING) << "Failed to locate a string";
+	EXPECT_EQ(slist->at(0), EMPTY_STRING) << "Failed to locate an empty string";
+	EXPECT_EQ(slist->at(1), STRING) << "Failed to locate a string";
 	std::string* popped = slist->pop_back();
-	ASSERT_EQ(*popped, STRING) << "Failed to pop a string";
+	EXPECT_EQ(*popped, STRING) << "Failed to pop a string";
 	delete popped;
 	popped = slist->pop_back();
-	ASSERT_EQ(*popped, EMPTY_STRING) << "Failed to pop an empty string";
+	EXPECT_EQ(*popped, EMPTY_STRING) << "Failed to pop an empty string";
 	delete popped;
-	ASSERT_TRUE(slist->empty());
+	EXPECT_TRUE(slist->empty());
 	ASSERT_EQ(slist->size(), 0);
 }
