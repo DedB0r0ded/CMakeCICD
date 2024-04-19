@@ -9,7 +9,7 @@ endif()
 project (CMakeCI VERSION 0.1)
 
 # Добавьте источник в исполняемый файл этого проекта.
-add_executable (CMakeCI "List.h" "Items/Item.h" "Header.h" "Config.h" "Tests/ListTests.cpp" "Tests/ItemsTests.cpp" Source.cpp)
+add_executable (CMakeCI "List.h" "Items/Item.h" "Header.h" "Config.h" "Tests/ListTests.cpp" "Tests/ItemsTests.cpp" Source.cpp "HealthComponent.h" "HealthComponent.cpp" "Component.h" "Component.cpp")
 target_link_libraries(
   CMakeCI
   GTest::gtest_main
