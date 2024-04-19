@@ -8,7 +8,9 @@ class HealthComponent : public Component{
   bool _updateIsDead();
 
 public:
-  HealthComponent(const int maxHealth = 0, const int health = 0);
+  HealthComponent(const int maxHealth, const int health);
+  HealthComponent(const int maxHealth);
+  HealthComponent();
 
   int takeDamage(const int damage);
   int heal(const int healValue);

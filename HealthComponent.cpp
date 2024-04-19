@@ -23,6 +23,16 @@ HealthComponent::HealthComponent(const int maxHealth, const int health) : m_maxH
   _updateIsDead();
 }
 
+HealthComponent::HealthComponent(const int maxHealth)
+  : HealthComponent(maxHealth, maxHealth)
+{
+}
+
+HealthComponent::HealthComponent()
+  : HealthComponent(0, 0)
+{
+}
+
 int HealthComponent::takeDamage(const int damage)
 {
   int appliedDamage;

@@ -54,10 +54,10 @@ TEST_F(HealthComponentTest, isDeadStateInitiatedCorrectly){
   
   EXPECT_FALSE(hc1.isDead());
   EXPECT_FALSE(hc2.isDead());
+  EXPECT_FALSE(hc2i.isDead());
 
   EXPECT_TRUE(hc.isDead());
   EXPECT_TRUE(hc1in.isDead());
-  EXPECT_TRUE(hc2i.isDead());
   EXPECT_TRUE(hc2in.isDead());
 
 }
@@ -82,12 +82,17 @@ TEST_F(HealthComponentTest, damageTakingAsserts){
 
 TEST_F(HealthComponentTest, healingAsserts){
   
-  EXPECT_EQ(hc.heal(20), 20);
+  EXPECT_EQ(hc1.takeDamage(200), 100);
+  EXPECT_EQ(hc1.getHealthPoints(), 0);
+  EXPECT_EQ(hc1.getMaxHealthPoints(), 100);
+  ASSERT_TRUE(hc1.isDead());
+
+  EXPECT_EQ(hc1.heal(20), 20);
   EXPECT_EQ(hc1.getHealthPoints(), 20);
   EXPECT_EQ(hc1.getMaxHealthPoints(), 100);
   ASSERT_FALSE(hc1.isDead());
 
-  EXPECT_EQ(hc.heal(200), 80);
+  EXPECT_EQ(hc1.heal(200), 80);
   EXPECT_EQ(hc1.getHealthPoints(), 100);
   EXPECT_EQ(hc1.getMaxHealthPoints(), 100);
   ASSERT_FALSE(hc1.isDead());
