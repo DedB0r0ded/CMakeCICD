@@ -12,8 +12,14 @@ bool HealthComponent::_updateIsDead()
 
 HealthComponent::HealthComponent(const int maxHealth, const int health) : m_maxHealth{ maxHealth }, m_health { health }, m_isDead{ false }
 {
+  if (maxHealth < 0)
+    m_maxHealth = 0;
+  if (health < 0)
+    m_health = 0;
+
   if (m_health > m_maxHealth)
     m_health = m_maxHealth;
+
   _updateIsDead();
 }
 
@@ -53,4 +59,14 @@ int HealthComponent::heal(const int healValue)
 bool HealthComponent::isDead() const
 {
   return m_isDead;
+}
+
+int HealthComponent::getHealthPoints() const
+{
+  return m_health;
+}
+
+int HealthComponent::getMaxHealthPoints() const
+{
+  return m_maxHealth;
 }

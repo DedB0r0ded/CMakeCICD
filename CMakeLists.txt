@@ -9,7 +9,11 @@ endif()
 project (CMakeCI VERSION 0.1)
 
 # Добавьте источник в исполняемый файл этого проекта.
-add_executable (CMakeCI "List.h" "Items/Item.h" "Header.h" "Config.h" "Tests/ListTests.cpp" "Tests/ItemsTests.cpp" Source.cpp "HealthComponent.h" "HealthComponent.cpp" "Component.h" "Component.cpp")
+add_executable (CMakeCI 
+    "Items/Item.h" "Header.h" "Config.h"
+    "Component.cpp" "HealthComponent.cpp"
+    "Tests/ListTests.cpp" "Tests/ItemsTests.cpp" "Tests/HealthComponentTests.cpp"
+    Source.cpp)
 target_link_libraries(
   CMakeCI
   GTest::gtest_main
@@ -21,7 +25,7 @@ if (CMAKE_VERSION VERSION_GREATER 3.12)
   set_property(TARGET CMakeCI PROPERTY CXX_STANDARD 20)
 endif()
 
-# TODO: Добавить тесты 
+# Добавление тестов 
 enable_testing()
 include(FetchContent)
 FetchContent_Declare(

@@ -13,4 +13,7 @@ public:
   int takeDamage(const int damage);
   int heal(const int healValue);
   bool isDead() const;
+
+  int getHealthPoints() const;
+  int getMaxHealthPoints() const;
 };
