@@ -9,4 +9,5 @@
 #include <memory>
 
 #include <gtest/gtest.h>
-// TODO: установите здесь ссылки на дополнительные заголовки, требующиеся для программы.
+
+#include "IDamagable.h"

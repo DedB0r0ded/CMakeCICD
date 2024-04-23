@@ -10,8 +10,10 @@ project (CMakeCI VERSION 0.1)
 
 # Добавьте источник в исполняемый файл этого проекта.
 add_executable (CMakeCI 
-    "Items/Item.h" "Header.h" "Config.h"
+    "Items/Item.h" "Config.h"
     "Component.cpp" "HealthComponent.cpp"
+    "Entity.cpp"
+    "Header.h"
     "Tests/ListTests.cpp" "Tests/ItemsTests.cpp" "Tests/HealthComponentTests.cpp"
     Source.cpp)
 target_link_libraries(
