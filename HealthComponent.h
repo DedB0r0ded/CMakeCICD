@@ -13,7 +13,7 @@ public:
   HealthComponent();
 
   int takeDamage(const int damage);
-  int heal(const int healValue);
+  int getHeal(const int healValue);
   bool isDead() const;
 
   int getHealthPoints() const;

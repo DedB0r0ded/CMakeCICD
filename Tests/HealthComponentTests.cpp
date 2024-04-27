@@ -87,12 +87,12 @@ TEST_F(HealthComponentTest, healingAsserts){
   EXPECT_EQ(hc1.getMaxHealthPoints(), 100);
   ASSERT_TRUE(hc1.isDead());
 
-  EXPECT_EQ(hc1.heal(20), 20);
+  EXPECT_EQ(hc1.getHeal(20), 20);
   EXPECT_EQ(hc1.getHealthPoints(), 20);
   EXPECT_EQ(hc1.getMaxHealthPoints(), 100);
   ASSERT_FALSE(hc1.isDead());
 
-  EXPECT_EQ(hc1.heal(200), 80);
+  EXPECT_EQ(hc1.getHeal(200), 80);
   EXPECT_EQ(hc1.getHealthPoints(), 100);
   EXPECT_EQ(hc1.getMaxHealthPoints(), 100);
   ASSERT_FALSE(hc1.isDead());

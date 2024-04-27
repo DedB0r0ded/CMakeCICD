@@ -48,7 +48,7 @@ int HealthComponent::takeDamage(const int damage)
   return appliedDamage;
 }
 
-int HealthComponent::heal(const int healValue)
+int HealthComponent::getHeal(const int healValue)
 {
   int appliedHeal;
 
