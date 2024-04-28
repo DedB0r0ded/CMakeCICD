@@ -16,6 +16,6 @@ public:
   int getHeal(const int healValue);
   bool isDead() const;
 
-  int getHealthPoints() const;
+  int getHealthPoints() const; 
   int getMaxHealthPoints() const;
 };
