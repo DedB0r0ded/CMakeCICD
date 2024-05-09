@@ -15,7 +15,7 @@ add_executable (CMakeCI
     "Entity.cpp"
     "Header.h"
     "Tests/ListTests.cpp" "Tests/ItemsTests.cpp" "Tests/HealthComponentTests.cpp"
-    Source.cpp)
+    Source.cpp "temp.cpp")
 target_link_libraries(
   CMakeCI
   GTest::gtest_main
