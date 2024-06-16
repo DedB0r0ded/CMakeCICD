@@ -11,3 +11,4 @@
 #include <gtest/gtest.h>
 
 #include "IDamagable.h"
+#include "Entity.h"
