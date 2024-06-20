@@ -26,6 +26,11 @@ std::ostream& operator<<(std::ostream& os, const Color& color) {
 	return os;
 }
 
+int* foo(const int& size) {
+	int* arr = (int*)malloc(size*sizeof(int));
+	return arr;
+}
+
 int main(int argc, char** argv)
 {
 	int x{ 0 };
@@ -36,10 +41,13 @@ int main(int argc, char** argv)
 	l();
 	l();
 
-	std::underlying_type_t<Color> a;
-	a = 2;
+	int* a;
+	a = foo(10);
 
-	std::cout << Color::Cyan;
+	for(int i = 0; i < 10; i++)
+		std::cout << a[i] << std::endl;
+
+	free(a);
 
 	testing::InitGoogleTest(&argc, argv);
 	return RUN_ALL_TESTS();
