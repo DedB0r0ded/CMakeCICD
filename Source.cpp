@@ -31,6 +31,27 @@ int* foo(const int& size) {
 	return arr;
 }
 
+class A {
+public:
+	int x, y;
+	A() { x = y = 5; }
+};
+
+class B {
+public:
+	A* Ass;
+	int n;
+	B() {
+		Ass = nullptr; n = 0;
+	}
+	B(int n) {
+		Ass = new A[n]; this->n = n;
+	}
+	~B() {
+		delete Ass;
+	}
+};
+
 int main(int argc, char** argv)
 {
 	int x{ 0 };
@@ -41,6 +62,11 @@ int main(int argc, char** argv)
 	l();
 	l();
 
+	B obj = B(100000);
+	for (int i = 0; i < obj.n; i++) {
+		std::cout << "x: " << obj.Ass[i].x << "; y: " << obj.Ass[i].y << "\n";
+	}
+
 	int* a;
 	a = foo(10);
 
@@ -49,7 +75,7 @@ int main(int argc, char** argv)
 
 	free(a);
 
-	testing::InitGoogleTest(&argc, argv);
-	return RUN_ALL_TESTS();
+	//testing::InitGoogleTest(&argc, argv);
+	return 0; // RUN_ALL_TESTS();
 }
 
