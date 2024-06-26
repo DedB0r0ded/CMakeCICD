@@ -62,11 +62,6 @@ int main(int argc, char** argv)
 	l();
 	l();
 
-	B obj = B(100000);
-	for (int i = 0; i < obj.n; i++) {
-		std::cout << "x: " << obj.Ass[i].x << "; y: " << obj.Ass[i].y << "\n";
-	}
-
 	int* a;
 	a = foo(10);
 
