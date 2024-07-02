@@ -52,23 +52,13 @@ public:
 	}
 };
 
+#define intp std::unique_ptr<int>
+
 int main(int argc, char** argv)
 {
-	int x{ 0 };
-	auto l = [&x]() {
-		std::cout << (x += 100) << std::endl;
-		};
-
-	l();
-	l();
-
-	int* a;
-	a = foo(10);
-
-	for(int i = 0; i < 10; i++)
-		std::cout << a[i] << std::endl;
-
-	free(a);
+	int size = 5;
+	int arr[5];
+	std::cout << arr[2];
 
 	//testing::InitGoogleTest(&argc, argv);
 	return 0; // RUN_ALL_TESTS();
