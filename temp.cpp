@@ -7,6 +7,8 @@ typedef uint8_t u8;
 typedef int64_t i64;
 typedef uint64_t u64;
 
+using std::size_t;
+
 struct row {
   u64 m_value;
   const size_t m_size = 16;

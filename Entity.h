@@ -9,6 +9,6 @@ public:
   
   int takeDamage(int damage) override;
   int getHeal(int healValue) override;
-  int takeDamageIf(const int damage, bool(*assertion)());
+  int takeDamageIf(const int damage, bool(*assertion)()) override;
   std::string retstrIf(std::function<bool(void)> predicate);
 };
